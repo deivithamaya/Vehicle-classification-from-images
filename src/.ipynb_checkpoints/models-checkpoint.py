@@ -23,15 +23,40 @@ def create_mlp_model(input_shape: Tuple[int, int, int], num_classes: int) -> Seq
     Returns:
         A Sequential model object with the specified MLP architecture.
     """
+    # Define the model
     model = Sequential()
-    model.add(Input(shape=input_shape))
-    model.add(Rescaling(1.0 / 255, input_shape=input_shape))
-    model.add(Flatten())
-    model.add(Dense(512, activation='relu'))
-    model.add(Dense(1024, activation='relu'))
-    model.add(Dense(512, activation='relu'))
-    model.add(Dense(num_classes, activation='softmax'))
 
+    # Add the input layer
+    model.add(Input(shape=input_shape))
+
+    # Layer 0: Rescaling operation to map image pixels from [0, 255] to [0, 1] range
+    model.add(Rescaling(1.0 / 255, input_shape=input_shape))
+
+    # Layer 1: Flatten layer to convert the 3D input image to a 1D array
+    model.add(Flatten())
+
+    # Adding hidden layers to the model
+    # Layer 2: Fully connected layer with 512 neurons,
+    # followed by a relu activation function
+    # TODO
+    model.add(...)
+
+    # Layer 3: Fully connected layer with 1024 neurons,
+    # followed by a relu activation function
+    # TODO
+    model.add(...)
+
+    # Layer 4: Fully connected layer with 512 neurons,
+    # followed by a relu activation function
+    # TODO
+    model.add(...)
+
+    # Layer 5: Classification layer with num_classes output units,
+    # followed by a softmax activation function
+    # TODO
+    model.add(...)
+
+    # Print a summary of the model architecture
     print(model.summary())
 
     return model
@@ -51,18 +76,53 @@ def create_lenet_model(
     Returns:
         A Sequential model object representing the LeNet architecture.
     """
+    # Define the model
     model = Sequential()
-    model.add(Input(shape=input_shape))
-    model.add(Rescaling(1.0 / 255, input_shape=input_shape))
-    model.add(Conv2D(6, 3, activation='tanh'))
-    model.add(AveragePooling2D())
-    model.add(Conv2D(16, 3, activation='tanh'))
-    model.add(AveragePooling2D())
-    model.add(Flatten())
-    model.add(Dense(120, activation='tanh'))
-    model.add(Dense(84, activation='tanh'))
-    model.add(Dense(num_classes, activation='softmax'))
 
+    # Add the input layer
+    model.add(Input(shape=input_shape))
+
+    # Layer 0: Rescaling operation to map image pixels from [0, 255] to [0, 1] range
+    model.add(Rescaling(1.0 / 255, input_shape=input_shape))
+
+    # Layer 1: Convolutional layer with 6 filters, each 3x3 in size,
+    # followed by a tanh activation function
+    # TODO
+    model.add(...)
+
+    # Layer 2: Average pooling layer with 2x2 pool size
+    # TODO
+    model.add(...)
+
+    # Layer 3: Convolutional layer with 16 filters, each 3x3 in size,
+    # followed by a tanh activation function
+    # TODO
+    model.add(...)
+
+    # Layer 4: Average pooling layer with 2x2 pool size
+    # TODO
+    model.add(...)
+
+    # Layer 5: Flatten layer to convert the output of the previous layer to a 1D array
+    # TODO
+    model.add(...)
+
+    # Layer 6: Fully connected layer with 120 neurons,
+    # followed by a tanh activation function
+    # TODO
+    model.add(...)
+
+    # Layer 7: Fully connected layer with 84 neurons,
+    # followed by a tanh activation function
+    # TODO
+    model.add(...)
+
+    # Layer 8: Classification layer with num_classes output units,
+    # followed by a softmax activation function
+    # TODO
+    model.add(...)
+
+    # Print a summary of the model architecture
     print(model.summary())
 
     return model
@@ -88,9 +148,7 @@ def create_resnet50_model(
     #   2. Don't include the classification layer (include_top=False)
     #   3. Define model input_shape equals to this function input_shape
     # TODO
-    resnet = ResNet50(weights='imagenet',
-                      input_shape=input_shape,
-                      include_top=False)
+    resnet = ...
 
     # You shouldn't change the code below
     # Freeze all layers in the ResNet50 model

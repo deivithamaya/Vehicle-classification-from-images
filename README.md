@@ -1,5 +1,4 @@
-# Sprint Project 04
-> Vehicle classification from images
+# Vehicle classification from images
 
 ## The Business problem
 
@@ -15,11 +14,11 @@ This is a Multi-class Classification task: we want to predict, given a picture o
 
 The dataset is composed of JPG images, already stored in folders containing the label (vehicle make-model), separated in train and test sets.
 
-You don't have to worry about downloading the data, it will be automatically downloaded from the `AnyoneAI - Sprint Project 04.ipynb` notebook in `Section 1 - Getting the data`.
+You don't have to worry about downloading the data, it will be automatically downloaded from the `Classification_images.ipynb` notebook in `Section 1 - Getting the data`.
 
 ## Technical aspects
 
-To develop this Machine Learning model you will have to primary interact with the Jupyter notebook provided, called `AnyoneAI - Sprint Project 04.ipynb`. This notebook will guide you through all the steps you have to follow and the code you have to complete in the different parts of the project, also marked with a `TODO` comment.
+To develop this Machine Learning model you will have to primary interact with the Jupyter notebook provided, called `Classification_images.ipynb`. This notebook will guide you through all the steps you have to follow and the code you have to complete in the different parts of the project, also marked with a `TODO` comment.
 
 The only file having `TODO`s that will require you to add your own code is `src/models.py`.
 
